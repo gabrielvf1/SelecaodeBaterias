@@ -1,4 +1,1 @@
-Grupo:
-Gabriel Francato
-Samuel Granato
-Raphael Azevedo
+Grupo:Gabriel Francato, Samuel Granato e Raphael Azevedo
