@@ -106,3 +106,13 @@ var mercurio = {
     preco:   251 * 4,
     massa_molar: 5
 };
+
+var iodo = {
+    n_eletrons:  1,
+    abreviatura:  "I",
+    potencial_reducao:   -0.54,
+    preco:   9 * 4,
+    massa_molar: 5
+};
+
+
