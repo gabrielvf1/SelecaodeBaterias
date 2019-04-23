@@ -10,13 +10,13 @@
         s2.innerHTML = "";
         if(s1.value == "litio"){
           var optionArray = ["carbonato_litio|Carbonato de Litio (Li2CO3)","hidroxido_litio|Hidroxido de Litio (LiOH)"];
-        } 
+        }
         else if(s1.value == "potassio"){
           var optionArray = ["hidroxido_potassio|Hidróxido de Potássio (KOH)","cloreto_potassio|Cloreto de Potassio (KCL)"];
-        } 
+        }
         else if(s1.value == "magnesio"){
           var optionArray = ["cloreto_magnesio|Cloreto de Magnesio (MgCl2)","sulfato_magnesio|Sulfato de Magnesio (MgSO4)"];
-        } 
+        }
         else if(s1.value == "aluminio"){
           var optionArray = ["acido_sulfurico|Acido Sulfurico (H2SO4)","hidroxido_aluminio|Hidróxido de Aluminio (Al(OH)3)"];
         }
@@ -84,27 +84,30 @@
                                     <div class="styled-select slate">
                                       <select name="slct1" id="slct1" onchange="populate(this.id,'slct2')">
                                         <option value=""></option>
-                                        <option value="litio">Litio</option>
-                                        <option value="potassio">Potassio</option>
-                                        <option value="magnesio">Magnesio</option>
-                                        <option value="aluminio">Aluminio</option>
-                                        <option value="zinco">Zinco</option>
-                                        <option value="cromio">Cromio</option>
-                                        <option value="ferro">Ferro</option>
-                                        <option value="chumbo">Chumbo</option>
-                                        <option value="cobre">Cobre</option>
-                                        <option value="prata">Prata</option>
-                                        <option value="mercurio">Mercurio</option>
+                                        <option value="Li">Litio</option>
+                                        <option value="K">Potassio</option>
+                                        <option value="Mg">Magnesio</option>
+                                        <option value="Al">Aluminio</option>
+                                        <option value="Zn">Zinco</option>
+                                        <option value="Cr">Cromio</option>
+                                        <option value="Fe">Ferro</option>
+                                        <option value="Ni">Niquel</option>
+                                        <option value="Pb">Chumbo</option>
+                                        <option value="Cu">Cobre</option>
+                                        <option value="Ag">Prata</option>
+                                        <option value="Hg">Mercurio</option>
+                                        <option value="I">Iodo</option>
+
                                       </select>
-                                    </div> 
+                                    </div>
                                   <label for="pergunta_2" >Solução do Catodo</label>
                                     <div class="styled-select slate">
                                       <select id = "slct2" name="slct2">
                                       </select>
-                                    </div> 
+                                    </div>
                               </div>
                               <div class="form-input">
-                                  <label for="pergunta_3" >Concentração da Solução do Catado</label>
+                                  <label for="pergunta_3" >Concentração da Solução do Catodo</label>
                                   <input type="number" name="pergunta_3" value="0" id="pergunta_3" min="0" max="10" />
                               </div>
                               <div class="form-input">
@@ -113,7 +116,7 @@
                               </div>
                               <div class="form-input">
                                   <label for="pergunta_5" >Temperatura</label>
-                                  <input type="number" name="pergunta_5" value="0" id="pergunta_5" min="0" max="24"/>
+                                  <input type="number" name="pergunta_5" value="0" id="pergunta_5" min="0" max="2000"/>
                               </div>
                             </div>
                             <div class="form-group">
@@ -122,33 +125,35 @@
                                     <div class="styled-select slate">
                                       <select name="slct3" id="slct3" onchange="populate(this.id,'slct4')">
                                         <option value=""></option>
-                                        <option value="litio">Litio</option>
-                                        <option value="potassio">Potassio</option>
-                                        <option value="magnesio">Magnesio</option>
-                                        <option value="aluminio">Audi</option>
-                                        <option value="zinco">Litio</option>
-                                        <option value="cromio">Litio</option>
-                                        <option value="ferro">Litio</option>
-                                        <option value="chumbo">Litio</option>
-                                        <option value="cobre">Litio</option>
-                                        <option value="prata">Litio</option>
-                                        <option value="mercurio">Litio</option>
+                                        <option value="Li">Litio</option>
+                                        <option value="K">Potassio</option>
+                                        <option value="Mg">Magnesio</option>
+                                        <option value="Al">Aluminio</option>
+                                        <option value="Zn">Zinco</option>
+                                        <option value="Cr">Cromio</option>
+                                        <option value="Fe">Ferro</option>
+                                        <option value="Ni">Niquel</option>
+                                        <option value="Pb">Chumbo</option>
+                                        <option value="Cu">Cobre</option>
+                                        <option value="Ag">Prata</option>
+                                        <option value="Hg">Mercurio</option>
+                                        <option value="I">Iodo</option>
                                       </select>
-                                    </div> 
+                                    </div>
                                   <label for="pergunta_7" >Solução do Anion</label>
                                     <div class="styled-select slate">
                                       <select id = "slct4" name="slct4">
                                       </select>
-                                    </div> 
+                                    </div>
                               </div>
                               <div class="form-input">
-                                <label for="pergunta_8" >Concen  tração da Solução do Anion (mol/L) </label>
+                                <label for="pergunta_8" >Concentração da Solução do Anion (mol/L) </label>
                                   <input type="number" name="pergunta_8" value="0" id="pergunta_8" min="0"  max="100000" />
                               </div>
                               <div class="form-input">
                                 <label for="pergunta_9" >Massa do Anion (kg)</label>
                                   <input type="number" name="pergunta_9" value="0" id="pergunta_9" min="0" max="100000" />
-                              </div> 
+                              </div>
                             </div>
                           </div>
                           <div class="form-submit">
@@ -354,30 +359,62 @@
 
       //eletricos
 
-      var ddp_teorica;
+      var ddp_teorica = 0;
       var ddp_real;
       var temp;
       var conc_anodo;
       var anodo;
+      var nome_anodo;
       var conc_catodo;
-      var catodo;
+      var nome_catodo;
       var n_eletrons;
       var Kgases = 287.0530;
       var Kfaraday = 96485.332;
 
-      catodo = document.getElementById("slct1").value;
-      anodo = document.getElementById("slct3").value;
-      alert(catodo);
-      alert(anodo);
+      nome_catodo = document.getElementById("slct1").value;
+      nome_anodo = document.getElementById("slct3").value;
 
-      for(int i = 0; i < 13; i++){
-          alert(materiais[i].abreviatura);
+      for(var i = 0; i < 13; i++){
+          if(materiais[i].abreviatura == nome_catodo){
+            // alert(materiais[i].potencial_reducao);
+            ddp_teorica -= materiais[i].potencial_reducao;
+              catodo = materiais[i];
+          }
+
+          if(materiais[i].abreviatura == nome_anodo){
+            // alert(materiais[i].potencial_reducao);
+              ddp_teorica += materiais[i].potencial_reducao;
+              anodo = materiais[i];
+          }
+      }
+
+      alert("Ddp teórica ->"+nome_catodo + " com "+ nome_anodo+" = "+parseFloat(ddp_teorica));
+
+      if(anodo.n_eletrons > catodo.n_eletrons){
+        n_eletrons = anodo.n_eletrons;
+      }else{
+        n_eletrons = catodo.n_eletrons;
       }
 
 
 
+
+      conc_catodo = document.getElementById("pergunta_3").value;
+      conc_anodo = document.getElementById("pergunta_8").value;
+
+      temp= document.getElementById("pergunta_5").value;
+
+
+      alert(temp);
+      alert(conc_anodo);
+      alert(conc_catodo);
+
+
       //equação de nernst
       ddp_real = ddp_teorica - (Kgases*temp/(n_eletrons*Kfaraday))*Math.log(conc_anodo/conc_catodo);
+
+      alert("Ddp real ->"+parseFloat(ddp_real));
+
 
 
     //   var soma = 0;
