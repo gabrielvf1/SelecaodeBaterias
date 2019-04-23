@@ -8,37 +8,37 @@
         var s1 = document.getElementById(s1);
         var s2 = document.getElementById(s2);
         s2.innerHTML = "";
-        if(s1.value == "litio"){
+        if(s1.value == "Li"){
           var optionArray = ["carbonato_litio|Carbonato de Litio (Li2CO3)","hidroxido_litio|Hidroxido de Litio (LiOH)"];
         }
-        else if(s1.value == "potassio"){
+        else if(s1.value == "K"){
           var optionArray = ["hidroxido_potassio|Hidróxido de Potássio (KOH)","cloreto_potassio|Cloreto de Potassio (KCL)"];
         }
-        else if(s1.value == "magnesio"){
+        else if(s1.value == "Mg"){
           var optionArray = ["cloreto_magnesio|Cloreto de Magnesio (MgCl2)","sulfato_magnesio|Sulfato de Magnesio (MgSO4)"];
         }
-        else if(s1.value == "aluminio"){
+        else if(s1.value == "Al"){
           var optionArray = ["acido_sulfurico|Acido Sulfurico (H2SO4)","hidroxido_aluminio|Hidróxido de Aluminio (Al(OH)3)"];
         }
-        else if(s1.value == "zinco"){
+        else if(s1.value == "Zn"){
           var optionArray = ["sulfato_zinco|Sulfato de zincon (ZnSO4)"];
         }
-        else if(s1.value == "cromio"){
+        else if(s1.value == "Cr"){
           var optionArray = ["sicromato_potassio|Sicromato de Potássio (K2Cr2O7)"];
         }
-        else if(s1.value == "ferro"){
+        else if(s1.value == "Fe"){
           var optionArray = ["sulfato_ferro|Sulfato de ferro (II) (FeSO4)","nitrato_ferro|Nitrato de ferro Fe(NO3)3"];
         }
-        else if(s1.value == "chumbo"){
+        else if(s1.value == "Pb"){
           var optionArray = ["sulfato_chumbo|Sulfato de chumbo (PbSO4)"];
         }
-        else if(s1.value == "cobre"){
+        else if(s1.value == "Cu"){
           var optionArray = ["sulfato_cobre|Sulfato de cobre (CuSO4)"];
         }
-        else if(s1.value == "prata"){
+        else if(s1.value == "Ag"){
           var optionArray = ["nitrato_prata|Nitrato de Prata (AgNO3)"];
         }
-        else if(s1.value == "mercurio"){
+        else if(s1.value == "Hg"){
           var optionArray = ["hidroxido_potassio|Hidróxido de Potássio (KOH)"];
         }
   for(var option in optionArray){
@@ -226,7 +226,7 @@
         abreviatura:  "Li",
         potencial_reducao:   3.04,
         preco:   190 * 4,
-        massa_molar: 5,
+        massa_molar: 6.94,
 
     };
 
@@ -236,7 +236,7 @@
         abreviatura:  "K",
         potencial_reducao:   2.92,
         preco:   20 * 4,
-        massa_molar: 5
+        massa_molar: 39.09
     };
 
 
@@ -245,7 +245,7 @@
         abreviatura:  "Mg",
         potencial_reducao:   2.37,
         preco:   14 * 4,
-        massa_molar: 5
+        massa_molar: 24.3
     };
 
     var aluminio = {
@@ -253,15 +253,16 @@
         abreviatura:  "Al",
         potencial_reducao:   1.66,
         preco:   3.5 * 4,
-        massa_molar: 5
+        massa_molar: 26.98
     };
+
 
     var zinco = {
         n_eletrons:  1,
         abreviatura:  "Zn",
         potencial_reducao:   0.76,
         preco:   2.85 * 4,
-        massa_molar: 5
+        massa_molar: 65.3
     };
 
     var cromio = {
@@ -269,23 +270,25 @@
         abreviatura: "Cr",
         potencial_reducao: 0.74,
         preco:   16 * 4,
-        massa_molar: 5
+        massa_molar: 51.9
     };
+
 
     var ferro = {
         n_eletrons:  1,
         abreviatura:  "Fe",
         potencial_reducao:   0.44,
         preco:   2 * 4,
-        massa_molar: 5
+        massa_molar: 55.8
     };
+
 
     var niquel = {
         n_eletrons:  1,
         abreviatura:  "Ni",
         potencial_reducao:   0.23,
         preco:   13 * 4,
-        massa_molar: 5
+        massa_molar: 58.6
     };
 
     var chumbo = {
@@ -293,23 +296,25 @@
         abreviatura:  "Pb",
         potencial_reducao:   0.13,
         preco:   2 * 4,
-        massa_molar: 5
+        massa_molar: 207.2
     };
+
 
     var cobre = {
         n_eletrons:  1,
         abreviatura:  "Cu",
         potencial_reducao:   -0.34,
         preco:   6.5 * 4,
-        massa_molar: 5
+        massa_molar: 63.54
     };
+
 
     var prata = {
         n_eletrons:  1,
         abreviatura:  "Ag",
         potencial_reducao:   -0.80,
         preco:   483 * 4,
-        massa_molar: 5
+        massa_molar: 107.86
     };
 
     var mercurio = {
@@ -317,7 +322,7 @@
         abreviatura:  "Hg",
         potencial_reducao:   -0.85,
         preco:   251 * 4,
-        massa_molar: 5
+        massa_molar: 200.5
     };
 
     var iodo = {
@@ -325,7 +330,7 @@
         abreviatura:  "I",
         potencial_reducao:   -0.54,
         preco:   9 * 4,
-        massa_molar: 5
+        massa_molar: 126.9
     };
 
     materiais.push(litio);
@@ -405,7 +410,7 @@
       preco: 3.5
     }
 
-    
+
 
 
 
@@ -481,6 +486,64 @@
       ddp_real = ddp_teorica - (Kgases*temp/(n_eletrons*Kfaraday))*Math.log(conc_anodo/conc_catodo);
 
       alert("Ddp real ->"+parseFloat(ddp_real));
+
+
+      var mols_anodo;
+      var mols_catodo;
+      var proporcao;
+      //calculo da quantidade molar
+      massa_catodo_input =  document.getElementById("pergunta_4").value;
+      massa_anodo_input =  document.getElementById("pergunta_9").value;
+
+      mols_anodo = (massa_anodo_input ) / anodo.massa_molar;
+      mols_catodo = (massa_catodo_input ) / catodo.massa_molar;
+
+
+      //
+      if(anodo.n_eletrons>=catodo.n_eletrons){
+        proporcao = anodo.n_eletrons / catodo.n_eletrons;
+      }else{
+        proporcao = catodo.n_eletrons / anodo.n_eletrons ;
+      }
+
+      //calculo de quantidade de mols que foram reagidos
+      var mols_eletron_reagidos;
+
+      var aux_cat;
+      var aux_ano;
+
+      //definir substancia limitante
+      if(mols_anodo > mols_catodo){
+        aux_ano = mols_anodo * proporcao;
+        aux_cat = mols_catodo;
+      }else{
+        aux_ano = mols_anodo;
+        aux_cat = mols_catodo * proporcao;
+      }
+
+      //quantidade de mols reagidos
+      if(aux_ano >aux_cat){
+        mols_eletron_reagidos = aux_cat * catodo.n_eletrons;
+      }else{
+        mols_eletron_reagidos = aux_ano * anodo.n_eletrons;
+      }
+
+      alert(proporcao);
+
+      var carga = mols_eletron_reagidos * Kfaraday;
+
+      ampere_hora = carga/3600;
+
+      var massa_total =  parseFloat(massa_anodo_input)+parseFloat(massa_catodo_input)+0.200;
+      var densidade_carga= carga/massa_total;
+      var densidade_energia = densidade_carga * ddp_real;
+      var preco_total = (massa_anodo_input * anodo.preco) + (massa_catodo_input * catodo.preco);
+
+      alert("Capacidade :" + parseFloat(ampere_hora) +"Ah");
+      alert("Massa total: "+ massa_total + "Kg");
+      alert("Densidade de carga: "+ densidade_carga );
+      alert("Densidade de energia: "+ densidade_energia );
+      alert("Preço total: R$"+ preco_total );
     }
 
     function Sugerindo(){
@@ -530,7 +593,7 @@
         for (var j = 0; j < 10; j++){
           if (lista_precos[i] == lista_todos[j][4]){
             lista_todos_ordenada.push(lista_todos[j]);
-            
+
           }
         }
       }
