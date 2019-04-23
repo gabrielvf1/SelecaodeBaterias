@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script type="text/javascript">
+      function populate(s1,s2){
+        var s1 = document.getElementById(s1);
+        var s2 = document.getElementById(s2);
+        s2.innerHTML = "";
+        if(s1.value == "litio"){
+          var optionArray = ["carbonato_litio|Carbonato de Litio (Li2CO3)","hidroxido_litio|Hidroxido de Litio (LiOH)"];
+        } 
+        else if(s1.value == "potassio"){
+          var optionArray = ["hidroxido_potassio|Hidróxido de Potássio (KOH)","cloreto_potassio|Cloreto de Potassio (KCL)"];
+        } 
+        else if(s1.value == "magnesio"){
+          var optionArray = ["cloreto_magnesio|Cloreto de Magnesio (MgCl2)","sulfato_magnesio|Sulfato de Magnesio (MgSO4)"];
+        } 
+        else if(s1.value == "aluminio"){
+          var optionArray = ["acido_sulfurico|Acido Sulfurico (H2SO4)","hidroxido_aluminio|Hidróxido de Aluminio (Al(OH)3)"];
+        }
+        else if(s1.value == "zinco"){
+          var optionArray = ["sulfato_zinco|Sulfato de zincon (ZnSO4)"];
+        }
+        else if(s1.value == "cromio"){
+          var optionArray = ["sicromato_potassio|Sicromato de Potássio (K2Cr2O7)"];
+        }
+        else if(s1.value == "ferro"){
+          var optionArray = ["sulfato_ferro|Sulfato de ferro (II) (FeSO4)","nitrato_ferro|Nitrato de ferro Fe(NO3)3"];
+        }
+        else if(s1.value == "chumbo"){
+          var optionArray = ["sulfato_chumbo|Sulfato de chumbo (PbSO4)"];
+        }
+        else if(s1.value == "cobre"){
+          var optionArray = ["sulfato_cobre|Sulfato de cobre (CuSO4)"];
+        }
+        else if(s1.value == "prata"){
+          var optionArray = ["nitrato_prata|Nitrato de Prata (AgNO3)"];
+        }
+        else if(s1.value == "mercurio"){
+          var optionArray = ["hidroxido_potassio|Hidróxido de Potássio (KOH)"];
+        }
+  for(var option in optionArray){
+    var pair = optionArray[option].split("|");
+    var newOption = document.createElement("option");
+    newOption.value = pair[0];
+    newOption.innerHTML = pair[1];
+    s2.options.add(newOption);
+    }
+  }
+
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculadora CO2</title>
+    <title>Seleção de Bateria</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -21,119 +70,90 @@
                 <div class="signup-img">
                     <img src="images/form-img.jpg" alt="">
                     <div class="signup-img-content">
-                        <h2>Calculadora sustentavel </h2>
-                        <p>CO2 equivalente</p>
                         <p id="demo"></p>
                     </div>
                 </div>
                 <div class="signup-form">
                     <form class="register-form" id="register-form" action="index.html">
-                        <div class="form-row">
+                       <h1>Voce deseja montar sua bateria: </h1>
+                          <div class="form-row">
                             <div class="form-group">
-                                <h1>Quantas horas por dia você usa:</h1>
-                                <div class="form-input">
-                                    <label for="pergunta_1" >lava-louças</label>
-                                    <input type="number" id="pergunta_1" value="0" min="0" max="24">
-
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_2" >ar-condicionado</label>
-                                    <input type="number" name="pergunta_2" value="0" id="pergunta_2" min="0"  max="24" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_3" >ventilador</label>
-                                    <input type="number" name="pergunta_3" value="0" id="pergunta_3" min="0" max="24" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_4" >geladeira</label>
-                                    <input type="number" name="pergunta_4" value="0" id="pergunta_4" min="0" max="24"/>
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_5" >video-games</label>
-                                    <input type="number" name="pergunta_5" value="0" id="pergunta_5" min="0" max="24"/>
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_6" >Televisão</label>
-                                    <input type="number" name="pergunta_6" value="0" id="pergunta_6" min="0"  max="24" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_7" >microondas</label>
-                                    <input type="number" name="pergunta_7" value="0" id="pergunta_7" min="0"  max="24" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_8" >computador</label>
-                                    <input type="number" name="pergunta_8" value="0" id="pergunta_8" min="0" max="24" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_9" >lavagem de roupa</label>
-                                    <input type="number" name="pergunta_9" value="0" id="pergunta_9" min="0" max="24"/>
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_10" >ferro elétrico</label>
-                                    <input type="number" name="pergunta_10" value="0" id="pergunta_10" min="0" max="24"/>
-                                </div>
+                              <div class="form-input">
+                                  <label for="pergunta_2" >Material do Catodo</label>
+                                    <div class="styled-select slate">
+                                      <select name="slct1" id="slct1" onchange="populate(this.id,'slct2')">
+                                        <option value=""></option>
+                                        <option value="litio">Litio</option>
+                                        <option value="potassio">Potassio</option>
+                                        <option value="magnesio">Magnesio</option>
+                                        <option value="aluminio">Aluminio</option>
+                                        <option value="zinco">Zinco</option>
+                                        <option value="cromio">Cromio</option>
+                                        <option value="ferro">Ferro</option>
+                                        <option value="chumbo">Chumbo</option>
+                                        <option value="cobre">Cobre</option>
+                                        <option value="prata">Prata</option>
+                                        <option value="mercurio">Mercurio</option>
+                                      </select>
+                                    </div> 
+                                  <label for="pergunta_11" >Solução do Catodo</label>
+                                    <div class="styled-select slate">
+                                      <select id = "slct2" name="slct2">
+                                      </select>
+                                    </div> 
+                              </div>
+                              <div class="form-input">
+                                  <label for="pergunta_3" >Concentração da Solução do Catado</label>
+                                  <input type="number" name="pergunta_3" value="0" id="pergunta_3" min="0" max="10" />
+                              </div>
+                              <div class="form-input">
+                                  <label for="pergunta_4" >Massa do Catodo (kg)</label>
+                                  <input type="number" name="pergunta_4" value="0" id="pergunta_4" min="0" max="24"/>
+                              </div>
+                              <div class="form-input">
+                                  <label for="pergunta_5" >Temperatura</label>
+                                  <input type="number" name="pergunta_5" value="0" id="pergunta_5" min="0" max="24"/>
+                              </div>
                             </div>
                             <div class="form-group">
-                                    <div class="form-input">
-                                            <label for="pergunta_11" >chuveiro</label>
-                                            <input type="number" id="pergunta_11" value="0" min="0" max="100000">
-
-
-                                        </div>
-                                        <div class="form-input">
-                                            <label for="pergunta_12" >lampada incandescente</label>
-                                            <input type="number" name="pergunta_12" value="0" id="pergunta_12" min="0"  max="100000" />
-                                        </div>
-                                        <div class="form-input">
-                                            <label for="pergunta_13" >lampada fluorescente</label>
-                                            <input type="number" name="pergunta_13" value="0" id="pergunta_13" min="0" max="100000" />
-                                        </div>
-                                <h1>Transporte</h1>
-                                <div class="form-select">
-                                    <div class="label-flex">
-                                        <label for="pergunta_14">Selecione motor do seu carro</label>
-                                    </div>
-                                    <div class="select-list">
-                                        <select name="pergunta_14" id="pergunta_14" >
-                                            <option id="p6_diariamente"value="0">Não tenho carro</option>
-                                            <option value="1">1.0 á álcool</option>
-                                            <option value="2">1.6 á álcool</option>
-                                            <option value="3">2.0+ á álcool</option>
-                                            <option value="4">1.0 á gasolina</option>
-                                            <option value="5">1.6 á gasolina</option>
-                                            <option value="6">2.0+ á gasolina</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-input">
-                                        <label for="pergunta_15">Quantos quilômetros você anda com seu carro por dia?</label>
-                                        <input type="number" value="0" name="pergunta_15" id="pergunta_15" />
-                                    </div>
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_16">Quantos quilômetros você anda de ônibus por dia?</label>
-                                    <input type="number" value="0" name="pergunta_16" id="pergunta_16" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_17">Quantos quilômetros você anda de uber/carona por dia?</label>
-                                    <input type="number" value="0" name="pergunta_17" id="pergunta_17" />
-                                </div>
-
-
-                                <div class="form-input">
-                                    <label for="pergunta_18">Quantos botijões de gás você usa por ano?</label>
-                                    <input type="number" value="0" name="pergunta_18" id="pergunta_18" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="pergunta_19">Qual a sua conta mensal de gás encanado, em Litros?</label>
-                                    <input type="number" value="0" name="pergunta_19" id="pergunta_19" />
-                                </div>
+                              <div class="form-input">
+                                <label for="pergunta_2" >Material do Anion</label>
+                                    <div class="styled-select slate">
+                                      <select name="slct3" id="slct3" onchange="populate(this.id,'slct4')">
+                                        <option value=""></option>
+                                        <option value="litio">Litio</option>
+                                        <option value="potassio">Potassio</option>
+                                        <option value="magnesio">Magnesio</option>
+                                        <option value="aluminio">Audi</option>
+                                        <option value="zinco">Litio</option>
+                                        <option value="cromio">Litio</option>
+                                        <option value="ferro">Litio</option>
+                                        <option value="chumbo">Litio</option>
+                                        <option value="cobre">Litio</option>
+                                        <option value="prata">Litio</option>
+                                        <option value="mercurio">Litio</option>
+                                      </select>
+                                    </div> 
+                                  <label for="pergunta_11" >Solução do Anion</label>
+                                    <div class="styled-select slate">
+                                      <select id = "slct4" name="slct4">
+                                      </select>
+                                    </div> 
+                              </div>
+                              <div class="form-input">
+                                <label for="pergunta_12" >Concen  tração da Solução do Anion (mol/L) </label>
+                                  <input type="number" name="pergunta_12" value="0" id="pergunta_12" min="0"  max="100000" />
+                              </div>
+                              <div class="form-input">
+                                <label for="pergunta_13" >Massa do Anion (kg)</label>
+                                  <input type="number" name="pergunta_13" value="0" id="pergunta_13" min="0" max="100000" />
+                              </div> 
                             </div>
-                        </div>
-
-                        <div class="form-submit">
-                            <input type="button" value="Calcular" class="submit" id="submit" name="submit" onclick="myFunction()" value="calculate">
-                            <input type="submit" value="Resetar" class="submit" id="reset" name="reset" />
-                        </div>
+                          </div>
+                          <div class="form-submit">
+                              <input type="button" value="Calcular" class="submit" id="submit" name="submit" onclick="Montar()" value="calculate">
+                              <input type="submit" value="Resetar" class="submit" id="reset" name="reset" />
+                          </div>
                     </form>
                 </div>
             </div>
@@ -155,7 +175,7 @@
 
 
 
-    function myFunction() {
+    function Montar() {
       //eletricos
 
 
