@@ -79,7 +79,7 @@
                           <div class="form-row">
                             <div class="form-group">
                               <div class="form-input">
-                                  <label for="pergunta_2" >Material do Catodo</label>
+                                  <label for="pergunta_1" >Material do Catodo</label>
                                     <div class="styled-select slate">
                                       <select name="slct1" id="slct1" onchange="populate(this.id,'slct2')">
                                         <option value=""></option>
@@ -96,7 +96,7 @@
                                         <option value="mercurio">Mercurio</option>
                                       </select>
                                     </div> 
-                                  <label for="pergunta_11" >Solução do Catodo</label>
+                                  <label for="pergunta_2" >Solução do Catodo</label>
                                     <div class="styled-select slate">
                                       <select id = "slct2" name="slct2">
                                       </select>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="form-group">
                               <div class="form-input">
-                                <label for="pergunta_2" >Material do Anion</label>
+                                <label for="pergunta_6" >Material do Anion</label>
                                     <div class="styled-select slate">
                                       <select name="slct3" id="slct3" onchange="populate(this.id,'slct4')">
                                         <option value=""></option>
@@ -134,19 +134,19 @@
                                         <option value="mercurio">Litio</option>
                                       </select>
                                     </div> 
-                                  <label for="pergunta_11" >Solução do Anion</label>
+                                  <label for="pergunta_7" >Solução do Anion</label>
                                     <div class="styled-select slate">
                                       <select id = "slct4" name="slct4">
                                       </select>
                                     </div> 
                               </div>
                               <div class="form-input">
-                                <label for="pergunta_12" >Concen  tração da Solução do Anion (mol/L) </label>
-                                  <input type="number" name="pergunta_12" value="0" id="pergunta_12" min="0"  max="100000" />
+                                <label for="pergunta_8" >Concen  tração da Solução do Anion (mol/L) </label>
+                                  <input type="number" name="pergunta_8" value="0" id="pergunta_8" min="0"  max="100000" />
                               </div>
                               <div class="form-input">
-                                <label for="pergunta_13" >Massa do Anion (kg)</label>
-                                  <input type="number" name="pergunta_13" value="0" id="pergunta_13" min="0" max="100000" />
+                                <label for="pergunta_9" >Massa do Anion (kg)</label>
+                                  <input type="number" name="pergunta_9" value="0" id="pergunta_9" min="0" max="100000" />
                               </div> 
                             </div>
                           </div>
@@ -158,7 +158,51 @@
                 </div>
             </div>
         </div>
-
+    </div>
+        <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+                        <p id="demo"></p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form class="register-form" id="register-form" action="index.html">
+                       <h1>Sugerindo Uma Pilha Para Sua Aplicação </h1>
+                          <div class="form-row">
+                            <div class="form-group">
+                              <div class="form-input">
+                                  <label for="pergunta_10" >DDP Desejada (V)</label>
+                                  <input type="number" name="pergunta_10" value="0" id="pergunta_10" min="0" max="10000" />
+                              </div>
+                              <div class="form-input">
+                                  <label for="pergunta_11" >Potencia Desejada (W)</label>
+                                  <input type="number" name="pergunta_11" value="0" id="pergunta_11" min="0" max="10" />
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-input">
+                                <div class="form-input">
+                                  <label for="pergunta_12" >Tempo Total Ligada (h)</label>
+                                  <input type="number" name="pergunta_12" value="0" id="pergunta_12" min="0" max="24"/>
+                              </div>
+                              <div class="form-input">
+                                  <label for="pergunta_13" >Capacidade de Carga</label>
+                                  <input type="number" name="pergunta_13" value="0" id="pergunta_13" min="0" max="24"/>
+                              </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-submit">
+                              <input type="button" value="Calcular" class="submit" id="submit" name="submit" onclick="Sugerindo()" value="calculate">
+                              <input type="submit" value="Resetar" class="submit" id="reset" name="reset" />
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JS -->
@@ -342,6 +386,14 @@
     // });
 
       }
+    </script>
+
+
+    <script>
+      function Sugerindo(){
+        
+      }
+
     </script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
