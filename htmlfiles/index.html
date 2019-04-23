@@ -194,10 +194,6 @@
                                   <label for="pergunta_12" >Tempo Total Ligada (h)</label>
                                   <input type="number" name="pergunta_12" value="0" id="pergunta_12" min="0" max="24"/>
                               </div>
-                              <div class="form-input">
-                                  <label for="pergunta_13" >Capacidade de Carga</label>
-                                  <input type="number" name="pergunta_13" value="0" id="pergunta_13" min="0" max="24"/>
-                              </div>
                               </div>
                             </div>
                           </div>
@@ -260,7 +256,6 @@
         massa_molar: 5
     };
 
-
     var zinco = {
         n_eletrons:  1,
         abreviatura:  "Zn",
@@ -277,7 +272,6 @@
         massa_molar: 5
     };
 
-
     var ferro = {
         n_eletrons:  1,
         abreviatura:  "Fe",
@@ -285,7 +279,6 @@
         preco:   2 * 4,
         massa_molar: 5
     };
-
 
     var niquel = {
         n_eletrons:  1,
@@ -303,7 +296,6 @@
         massa_molar: 5
     };
 
-
     var cobre = {
         n_eletrons:  1,
         abreviatura:  "Cu",
@@ -311,7 +303,6 @@
         preco:   6.5 * 4,
         massa_molar: 5
     };
-
 
     var prata = {
         n_eletrons:  1,
@@ -351,8 +342,84 @@
     materiais.push(mercurio);
     materiais.push(iodo);
 
+    var pilhas = [];
+
+    var chumbo_acida = {
+      nome : "Chumbo Acida 12V 28A",
+      capacidade: 28,
+      ddp: 12,
+      preco: 650.75
+    }
+    var NiCd = {
+      nome : "Niquel Cadmio 7.2V 0.6A",
+      capacidade: 0.6,
+      ddp: 7.2,
+      preco: 65
+    }
+   var lipo = {
+      nome : "Bateria Polimero de Litio 3.7V 1.8A",
+      capacidade: 1.8,
+      ddp: 3.7,
+      preco: 69
+    }
+    var NiMh = {
+      nome : "Bateria Hidreto Metalico de Niquel 1.2V 2A",
+      capacidade: 2,
+      ddp: 1.2,
+      preco: 8.43
+    }
+    var Liion = {
+      nome : "Litio Ion 3.7V 1.4A",
+      capacidade: 1.4,
+      ddp: 3.7,
+      preco: 45
+    }
+    var chumbo_acida1 = {
+      nome : "Chumbo Acida 6V 1,3A",
+      capacidade: 1.3,
+      ddp: 6,
+      preco: 38.30
+    }
+    var Liion1 = {
+      nome : "Litio Ion 3,6V 2,5A",
+      capacidade: 2.5,
+      ddp: 3.6,
+      preco: 19.38
+    }
+    var sc = {
+      nome : "Bateria Recarregável de Níquel Metal Hidreto 3,6V 2,5A",
+      capacidade: 3,
+      ddp: 1.2,
+      preco: 29
+    }
+    var duracel = {
+      nome : "Pilha Duracell Alcalina AA 1,5v 2,1A",
+      capacidade: 2.1,
+      ddp: 1.5,
+      preco: 2.875
+    }
+    var ZiCo = {
+      nome : "Pilha Zinco Carbono 1,5V 13A",
+      capacidade: 13,
+      ddp: 1.5,
+      preco: 3.5
+    }
+
+    
 
 
+
+
+    pilhas.push(chumbo_acida);
+    pilhas.push(NiCd);
+    pilhas.push(lipo);
+    pilhas.push(NiMh);
+    pilhas.push(Liion);
+    pilhas.push(chumbo_acida1);
+    pilhas.push(Liion1);
+    pilhas.push(sc);
+    pilhas.push(duracel);
+    pilhas.push(ZiCo);
 
 
     function Montar() {
@@ -414,181 +481,74 @@
       ddp_real = ddp_teorica - (Kgases*temp/(n_eletrons*Kfaraday))*Math.log(conc_anodo/conc_catodo);
 
       alert("Ddp real ->"+parseFloat(ddp_real));
-
-
-
-    //   var soma = 0;
-    //   var soma_c02 = 0;
-    //   for(i = 1 ; i <= 17 ; i++){
-    //
-    //     // alert(soma +"pergunta_" + i );
-    //
-    //     switch (i) {
-    //       case 1:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.5);
-    //         break;
-    //       case 2:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 3.5) ;
-    //         break;
-    //       case 3:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.1);
-    //         break;
-    //       case 4:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.3) ;
-    //         break;
-    //       case 5:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.015);
-    //         break;
-    //       case 6:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.2) ;
-    //         break;
-    //       case 7:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.3);
-    //         break;
-    //       case 8:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.18) ;
-    //         break;
-    //       case 9:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.5);
-    //         break;
-    //       case 10:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1) ;
-    //         break;
-    //       case 11:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 3.5);
-    //         break;
-    //       case 12:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.06 );
-    //         break;
-    //       case 13:
-    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.023) ;
-    //         break;
-    //       case 14:
-    //
-    //         switch (parseFloat(document.getElementById("pergunta_" + i).value)) {
-    //           case 1:
-    //             soma_c02 += parseFloat( document.getElementById("pergunta_15").value * 0.135);
-    //             break;
-    //
-    //           case 2:
-    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.152);
-    //             break;
-    //
-    //           case 3:
-    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.206);
-    //             break;
-    //
-    //           case 4:
-    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.136);
-    //             break;
-    //
-    //           case 5:
-    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.174);
-    //             break;
-    //
-    //           case 6:
-    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.217);
-    //             break;
-    //
-    //           default:
-    //
-    //         }
-    //
-    //         break;
-    //       case 16:
-    //         soma_c02 += parseFloat(document.getElementById("pergunta_16").value * 22.3);
-    //         break;
-    //
-    //       case 17:
-    //         soma_c02 += parseFloat(document.getElementById("pergunta_17").value * 0.136/2);
-    //         break;
-    //
-    //       default:
-    //     }
-    //
-    //   }
-    //
-    //   soma_c02 += soma * 0.11 * 365 + a;
-    //
-    //   //botijao
-    //   soma_c02 += parseFloat(document.getElementById("pergunta_18").value * 39.442);
-    //
-    //   //gas encanado
-    //   soma_c02 += parseFloat(document.getElementById("pergunta_19").value * 2.11);
-    //   // for(i = 1 ; i <= 17 ; i++){
-    //   //   soma += parseFloat(document.getElementById("pergunta_" + i).value);
-    //   //   // alert(soma +"pergunta_" + i );
-    //   //
-    //   // }
-    //     var stringe = ''+soma_c02.toFixed(3);
-    //     stringe = stringe.replace('.',',');
-    //     alert("O seu consumo de CO2 anual é de:"+stringe + "kg");
-    //     // var marginSlider = document.getElementById('slider-margin');
-    //     // marginSlider.setAttribute('start', soma);
-    //
-    //     console.log(soma_c02);
-    //     // var e = document.getElementById("pergunta_6");
-    //     // var strUser = e.options[e.selectedIndex].value;
-    //     // console.log(strUser);
-    //
-    //
-    //
-    //
-    //   //   if(marginSlider.noUiSlider == null){
-    //   //     noUiSlider.create(marginSlider, {
-    //   //         start: [soma_c02],
-    //   //         step: 1,
-    //   //         connect: [false, false],
-    //   //         tooltips: [true],
-    //   //         range: {
-    //   //             'min': 0.0,
-    //   //             'max': 50.0
-    //   //         },
-    //   //         format: wNumb({
-    //   //             decimals: 1,
-    //   //             thousand: ',',
-    //   //
-    //   //         })
-    //   // });
-    //   //   }else{
-    //   //     marginSlider.noUiSlider.destroy();
-    //   //
-    //   //         noUiSlider.create(marginSlider, {
-    //   //             start: [soma_c02],
-    //   //             step: 1,
-    //   //             connect: [false, false],
-    //   //             tooltips: [true],
-    //   //             range: {
-    //   //                 'min': 0.0,
-    //   //                 'max': 50.0
-    //   //             },
-    //   //             format: wNumb({
-    //   //                 decimals: 2,
-    //   //                 thousand: ',',
-    //   //
-    //   //             })
-    //   //     });
-    //   //   }
-    //     // marginSlider.noUiSlider.destroy();
-    //
-    //
-    // // marginSlider.noUiSlider.updateOptions({
-    // //     range: {
-    // //         'min': 20,
-    // //         'max': 50
-    // //     }
-    // // });
-    //
     }
-    </script>
+
+    function Sugerindo(){
+
+      var corrente, carga, massa_total, preco_total,total_celulas;
+
+      var ddp_esperada = document.getElementById("pergunta_10").value;
+      var potencia_esperada = document.getElementById("pergunta_11").value;
+      var tempo_ligada_desejado = document.getElementById("pergunta_12").value;
+
+      corrente = potencia_esperada/ddp_esperada;
+      carga = corrente*tempo_ligada_desejado*3600;
 
 
-    <script>
-      function Sugerindo(){
+      var lista_todos = [];
+      var lista_precos = [];
+      var lista_todos_ordenada = [];
+
+      for (var i = 0; i < 9; i++){
+        var lista_itens = []; //[ nome , numero_serie , numero paralelo, total de celulas , preco total]
+
+        nome_pilha = pilhas[i].nome;
+        lista_itens.push(nome_pilha);
+
+        numero_em_serie = ddp_esperada/pilhas[i].ddp;
+        numero_em_serie = Math.ceil(numero_em_serie);
+        lista_itens.push(numero_em_serie);
+
+        numero_em_paralelo = carga/(pilhas[i].capacidade*3600)
+        numero_em_paralelo = Math.ceil(numero_em_paralelo);
+        lista_itens.push(numero_em_paralelo);
+
+        total_celulas = numero_em_paralelo*numero_em_serie
+        lista_itens.push(total_celulas);
+
+        preco_total = total_celulas*pilhas[i].preco;
+        lista_itens.push(preco_total);
+
+        lista_precos.push(preco_total);
+
+        lista_todos.push(lista_itens);
 
       }
+      lista_precos.sort(function(a, b){return a - b});
 
-    </script>
+      for (var i = 0; i < 9; i++){
+        for (var j = 0; j < 9; j++){
+          if (lista_precos[i] == lista_todos[j][4]){
+            lista_todos_ordenada.push(lista_todos[j]);
+            
+          }
+        }
+      }
+
+      for (var i = 0; i < 3; i++){
+        alert(
+        i+1 + "º mais recomendada" + "\n" +
+        "A pilha é: " + lista_todos_ordenada[i][0] +"\n" +
+        "Celulas em Serie: " + lista_todos_ordenada[i][1] + "\n" +
+        "Celulas em Paralelo: " + lista_todos_ordenada[i][2] + "\n" +
+        "Total de Celulas: " + lista_todos_ordenada[i][3] + "\n" +
+        "Preco Total da Pilha: " + lista_todos_ordenada[i][4] + "\n"
+        )
+      }
+    }
+
+
+  </script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
