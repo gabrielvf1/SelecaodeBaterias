@@ -9,13 +9,13 @@
         s2.innerHTML = "";
         if(s1.value == "litio"){
           var optionArray = ["carbonato_litio|Carbonato de Litio (Li2CO3)","hidroxido_litio|Hidroxido de Litio (LiOH)"];
-        } 
+        }
         else if(s1.value == "potassio"){
           var optionArray = ["hidroxido_potassio|Hidróxido de Potássio (KOH)","cloreto_potassio|Cloreto de Potassio (KCL)"];
-        } 
+        }
         else if(s1.value == "magnesio"){
           var optionArray = ["cloreto_magnesio|Cloreto de Magnesio (MgCl2)","sulfato_magnesio|Sulfato de Magnesio (MgSO4)"];
-        } 
+        }
         else if(s1.value == "aluminio"){
           var optionArray = ["acido_sulfurico|Acido Sulfurico (H2SO4)","hidroxido_aluminio|Hidróxido de Aluminio (Al(OH)3)"];
         }
@@ -95,12 +95,12 @@
                                         <option value="prata">Prata</option>
                                         <option value="mercurio">Mercurio</option>
                                       </select>
-                                    </div> 
+                                    </div>
                                   <label for="pergunta_11" >Solução do Catodo</label>
                                     <div class="styled-select slate">
                                       <select id = "slct2" name="slct2">
                                       </select>
-                                    </div> 
+                                    </div>
                               </div>
                               <div class="form-input">
                                   <label for="pergunta_3" >Concentração da Solução do Catado</label>
@@ -124,21 +124,21 @@
                                         <option value="litio">Litio</option>
                                         <option value="potassio">Potassio</option>
                                         <option value="magnesio">Magnesio</option>
-                                        <option value="aluminio">Audi</option>
-                                        <option value="zinco">Litio</option>
-                                        <option value="cromio">Litio</option>
-                                        <option value="ferro">Litio</option>
-                                        <option value="chumbo">Litio</option>
-                                        <option value="cobre">Litio</option>
-                                        <option value="prata">Litio</option>
-                                        <option value="mercurio">Litio</option>
+                                        <option value="aluminio">Aluminio</option>
+                                        <option value="zinco">Zinco</option>
+                                        <option value="cromio">Cromio</option>
+                                        <option value="ferro">Ferro</option>
+                                        <option value="chumbo">Chumbo</option>
+                                        <option value="cobre">Cobre</option>
+                                        <option value="prata">Prata</option>
+                                        <option value="mercurio">Mercurio</option>
                                       </select>
-                                    </div> 
+                                    </div>
                                   <label for="pergunta_11" >Solução do Anion</label>
                                     <div class="styled-select slate">
                                       <select id = "slct4" name="slct4">
                                       </select>
-                                    </div> 
+                                    </div>
                               </div>
                               <div class="form-input">
                                 <label for="pergunta_12" >Concen  tração da Solução do Anion (mol/L) </label>
@@ -147,7 +147,7 @@
                               <div class="form-input">
                                 <label for="pergunta_13" >Massa do Anion (kg)</label>
                                   <input type="number" name="pergunta_13" value="0" id="pergunta_13" min="0" max="100000" />
-                              </div> 
+                              </div>
                             </div>
                           </div>
                           <div class="form-submit">
@@ -173,175 +173,331 @@
 
     var a = 5500;
 
+    var materiais = [];
+
+    var litio = {
+        n_eletrons:  1,
+        abreviatura:  "Li",
+        potencial_reducao:   3.04,
+        preco:   190 * 4,
+        massa_molar: 5,
+
+    };
+
+
+    var potassio = {
+        n_eletrons:  0.5,
+        abreviatura:  "K",
+        potencial_reducao:   2.92,
+        preco:   20 * 4,
+        massa_molar: 5
+    };
+
+
+    var magnesio = {
+        n_eletrons:  1,
+        abreviatura:  "Mg",
+        potencial_reducao:   2.37,
+        preco:   14 * 4,
+        massa_molar: 5
+    };
+
+    var aluminio = {
+        n_eletrons:  1,
+        abreviatura:  "Al",
+        potencial_reducao:   1.66,
+        preco:   3.5 * 4,
+        massa_molar: 5
+    };
+
+
+    var zinco = {
+        n_eletrons:  1,
+        abreviatura:  "Zn",
+        potencial_reducao:   0.76,
+        preco:   2.85 * 4,
+        massa_molar: 5
+    };
+
+    var cromio = {
+        n_eletrons: 1,
+        abreviatura: "Cr",
+        potencial_reducao: 0.74,
+        preco:   16 * 4,
+        massa_molar: 5
+    };
+
+
+    var ferro = {
+        n_eletrons:  1,
+        abreviatura:  "Fe",
+        potencial_reducao:   0.44,
+        preco:   2 * 4,
+        massa_molar: 5
+    };
+
+
+    var niquel = {
+        n_eletrons:  1,
+        abreviatura:  "Ni",
+        potencial_reducao:   0.23,
+        preco:   13 * 4,
+        massa_molar: 5
+    };
+
+    var chumbo = {
+        n_eletrons:  1,
+        abreviatura:  "Pb",
+        potencial_reducao:   0.13,
+        preco:   2 * 4,
+        massa_molar: 5
+    };
+
+
+    var cobre = {
+        n_eletrons:  1,
+        abreviatura:  "Cu",
+        potencial_reducao:   -0.34,
+        preco:   6.5 * 4,
+        massa_molar: 5
+    };
+
+
+    var prata = {
+        n_eletrons:  1,
+        abreviatura:  "Ag",
+        potencial_reducao:   -0.80,
+        preco:   483 * 4,
+        massa_molar: 5
+    };
+
+    var mercurio = {
+        n_eletrons:  1,
+        abreviatura:  "Hg",
+        potencial_reducao:   -0.85,
+        preco:   251 * 4,
+        massa_molar: 5
+    };
+
+    var iodo = {
+        n_eletrons:  1,
+        abreviatura:  "I",
+        potencial_reducao:   -0.54,
+        preco:   9 * 4,
+        massa_molar: 5
+    };
+
+    materiais.push(litio);
+    materiais.push(potassio);
+    materiais.push(magnesio);
+    materiais.push(aluminio);
+    materiais.push(zinco);
+    materiais.push(cromio);
+    materiais.push(ferro);
+    materiais.push(niquel);
+    materiais.push(chumbo);
+    materiais.push(cobre);
+    materiais.push(prata);
+    materiais.push(mercurio);
+    materiais.push(iodo);
+
+
+
 
 
     function Montar() {
+
       //eletricos
 
+      var ddp_teorica;
+      var ddp_real;
+      var temp;
+      var conc_anodo;
+      var anodo;
+      var conc_catodo;
+      var catodo;
+      var n_eletrons;
+      var Kgases = 287.0530;
+      var Kfaraday = 96485.332;
 
-      var soma = 0;
-      var soma_c02 = 0;
-      for(i = 1 ; i <= 17 ; i++){
+      catodo = document.getElementById("slct1").value;
+      anodo = document.getElementById("slct3").value;
+      alert(catodo);
+      alert(anodo);
 
-        // alert(soma +"pergunta_" + i );
-
-        switch (i) {
-          case 1:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.5);
-            break;
-          case 2:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 3.5) ;
-            break;
-          case 3:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.1);
-            break;
-          case 4:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.3) ;
-            break;
-          case 5:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.015);
-            break;
-          case 6:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.2) ;
-            break;
-          case 7:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.3);
-            break;
-          case 8:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.18) ;
-            break;
-          case 9:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.5);
-            break;
-          case 10:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 1) ;
-            break;
-          case 11:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 3.5);
-            break;
-          case 12:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.06 );
-            break;
-          case 13:
-            soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.023) ;
-            break;
-          case 14:
-
-            switch (parseFloat(document.getElementById("pergunta_" + i).value)) {
-              case 1:
-                soma_c02 += parseFloat( document.getElementById("pergunta_15").value * 0.135);
-                break;
-
-              case 2:
-                soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.152);
-                break;
-
-              case 3:
-                soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.206);
-                break;
-
-              case 4:
-                soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.136);
-                break;
-
-              case 5:
-                soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.174);
-                break;
-
-              case 6:
-                soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.217);
-                break;
-
-              default:
-
-            }
-
-            break;
-          case 16:
-            soma_c02 += parseFloat(document.getElementById("pergunta_16").value * 22.3);
-            break;
-
-          case 17:
-            soma_c02 += parseFloat(document.getElementById("pergunta_17").value * 0.136/2);
-            break;
-
-          default:
-        }
-
+      for(int i = 0; i < 13; i++){
+          alert(materiais[i].abreviatura);
       }
 
-      soma_c02 += soma * 0.11 * 365 + a;
-
-      //botijao
-      soma_c02 += parseFloat(document.getElementById("pergunta_18").value * 39.442);
-
-      //gas encanado
-      soma_c02 += parseFloat(document.getElementById("pergunta_19").value * 2.11);
-      // for(i = 1 ; i <= 17 ; i++){
-      //   soma += parseFloat(document.getElementById("pergunta_" + i).value);
-      //   // alert(soma +"pergunta_" + i );
-      //
-      // }
-        var stringe = ''+soma_c02.toFixed(3);
-        stringe = stringe.replace('.',',');
-        alert("O seu consumo de CO2 anual é de:"+stringe + "kg");
-        // var marginSlider = document.getElementById('slider-margin');
-        // marginSlider.setAttribute('start', soma);
-
-        console.log(soma_c02);
-        // var e = document.getElementById("pergunta_6");
-        // var strUser = e.options[e.selectedIndex].value;
-        // console.log(strUser);
 
 
+      //equação de nernst
+      ddp_real = ddp_teorica - (Kgases*temp/(n_eletrons*Kfaraday))*Math.log(conc_anodo/conc_catodo);
 
 
-      //   if(marginSlider.noUiSlider == null){
-      //     noUiSlider.create(marginSlider, {
-      //         start: [soma_c02],
-      //         step: 1,
-      //         connect: [false, false],
-      //         tooltips: [true],
-      //         range: {
-      //             'min': 0.0,
-      //             'max': 50.0
-      //         },
-      //         format: wNumb({
-      //             decimals: 1,
-      //             thousand: ',',
-      //
-      //         })
-      // });
-      //   }else{
-      //     marginSlider.noUiSlider.destroy();
-      //
-      //         noUiSlider.create(marginSlider, {
-      //             start: [soma_c02],
-      //             step: 1,
-      //             connect: [false, false],
-      //             tooltips: [true],
-      //             range: {
-      //                 'min': 0.0,
-      //                 'max': 50.0
-      //             },
-      //             format: wNumb({
-      //                 decimals: 2,
-      //                 thousand: ',',
-      //
-      //             })
-      //     });
-      //   }
-        // marginSlider.noUiSlider.destroy();
-
-
-    // marginSlider.noUiSlider.updateOptions({
-    //     range: {
-    //         'min': 20,
-    //         'max': 50
+    //   var soma = 0;
+    //   var soma_c02 = 0;
+    //   for(i = 1 ; i <= 17 ; i++){
+    //
+    //     // alert(soma +"pergunta_" + i );
+    //
+    //     switch (i) {
+    //       case 1:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.5);
+    //         break;
+    //       case 2:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 3.5) ;
+    //         break;
+    //       case 3:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.1);
+    //         break;
+    //       case 4:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.3) ;
+    //         break;
+    //       case 5:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.015);
+    //         break;
+    //       case 6:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.2) ;
+    //         break;
+    //       case 7:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.3);
+    //         break;
+    //       case 8:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.18) ;
+    //         break;
+    //       case 9:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1.5);
+    //         break;
+    //       case 10:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 1) ;
+    //         break;
+    //       case 11:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 3.5);
+    //         break;
+    //       case 12:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.06 );
+    //         break;
+    //       case 13:
+    //         soma += parseFloat(document.getElementById("pergunta_" + i).value * 0.023) ;
+    //         break;
+    //       case 14:
+    //
+    //         switch (parseFloat(document.getElementById("pergunta_" + i).value)) {
+    //           case 1:
+    //             soma_c02 += parseFloat( document.getElementById("pergunta_15").value * 0.135);
+    //             break;
+    //
+    //           case 2:
+    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.152);
+    //             break;
+    //
+    //           case 3:
+    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.206);
+    //             break;
+    //
+    //           case 4:
+    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.136);
+    //             break;
+    //
+    //           case 5:
+    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.174);
+    //             break;
+    //
+    //           case 6:
+    //             soma_c02 += parseFloat(document.getElementById("pergunta_15").value * 0.217);
+    //             break;
+    //
+    //           default:
+    //
+    //         }
+    //
+    //         break;
+    //       case 16:
+    //         soma_c02 += parseFloat(document.getElementById("pergunta_16").value * 22.3);
+    //         break;
+    //
+    //       case 17:
+    //         soma_c02 += parseFloat(document.getElementById("pergunta_17").value * 0.136/2);
+    //         break;
+    //
+    //       default:
     //     }
-    // });
-
-      }
+    //
+    //   }
+    //
+    //   soma_c02 += soma * 0.11 * 365 + a;
+    //
+    //   //botijao
+    //   soma_c02 += parseFloat(document.getElementById("pergunta_18").value * 39.442);
+    //
+    //   //gas encanado
+    //   soma_c02 += parseFloat(document.getElementById("pergunta_19").value * 2.11);
+    //   // for(i = 1 ; i <= 17 ; i++){
+    //   //   soma += parseFloat(document.getElementById("pergunta_" + i).value);
+    //   //   // alert(soma +"pergunta_" + i );
+    //   //
+    //   // }
+    //     var stringe = ''+soma_c02.toFixed(3);
+    //     stringe = stringe.replace('.',',');
+    //     alert("O seu consumo de CO2 anual é de:"+stringe + "kg");
+    //     // var marginSlider = document.getElementById('slider-margin');
+    //     // marginSlider.setAttribute('start', soma);
+    //
+    //     console.log(soma_c02);
+    //     // var e = document.getElementById("pergunta_6");
+    //     // var strUser = e.options[e.selectedIndex].value;
+    //     // console.log(strUser);
+    //
+    //
+    //
+    //
+    //   //   if(marginSlider.noUiSlider == null){
+    //   //     noUiSlider.create(marginSlider, {
+    //   //         start: [soma_c02],
+    //   //         step: 1,
+    //   //         connect: [false, false],
+    //   //         tooltips: [true],
+    //   //         range: {
+    //   //             'min': 0.0,
+    //   //             'max': 50.0
+    //   //         },
+    //   //         format: wNumb({
+    //   //             decimals: 1,
+    //   //             thousand: ',',
+    //   //
+    //   //         })
+    //   // });
+    //   //   }else{
+    //   //     marginSlider.noUiSlider.destroy();
+    //   //
+    //   //         noUiSlider.create(marginSlider, {
+    //   //             start: [soma_c02],
+    //   //             step: 1,
+    //   //             connect: [false, false],
+    //   //             tooltips: [true],
+    //   //             range: {
+    //   //                 'min': 0.0,
+    //   //                 'max': 50.0
+    //   //             },
+    //   //             format: wNumb({
+    //   //                 decimals: 2,
+    //   //                 thousand: ',',
+    //   //
+    //   //             })
+    //   //     });
+    //   //   }
+    //     // marginSlider.noUiSlider.destroy();
+    //
+    //
+    // // marginSlider.noUiSlider.updateOptions({
+    // //     range: {
+    // //         'min': 20,
+    // //         'max': 50
+    // //     }
+    // // });
+    //
+    }
     </script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
