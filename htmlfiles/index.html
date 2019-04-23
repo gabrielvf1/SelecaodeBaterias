@@ -499,7 +499,7 @@
       var lista_precos = [];
       var lista_todos_ordenada = [];
 
-      for (var i = 0; i < 9; i++){
+      for (var i = 0; i < 10; i++){
         var lista_itens = []; //[ nome , numero_serie , numero paralelo, total de celulas , preco total]
 
         nome_pilha = pilhas[i].nome;
@@ -526,8 +526,8 @@
       }
       lista_precos.sort(function(a, b){return a - b});
 
-      for (var i = 0; i < 9; i++){
-        for (var j = 0; j < 9; j++){
+      for (var i = 0; i < 10; i++){
+        for (var j = 0; j < 10; j++){
           if (lista_precos[i] == lista_todos[j][4]){
             lista_todos_ordenada.push(lista_todos[j]);
             
