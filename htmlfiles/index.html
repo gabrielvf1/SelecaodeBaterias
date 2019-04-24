@@ -108,15 +108,15 @@
                               </div>
                               <div class="form-input">
                                   <label for="pergunta_3" >Concentração da Solução do Catodo</label>
-                                  <input type="number" name="pergunta_3" value="0" id="pergunta_3" min="0" max="10" />
+                                  <input type="number" name="pergunta_3" value="1" id="pergunta_3" min="0" max="10"  />
                               </div>
                               <div class="form-input">
                                   <label for="pergunta_4" >Massa do Catodo (kg)</label>
-                                  <input type="number" name="pergunta_4" value="0" id="pergunta_4" min="0" max="24"/>
+                                  <input type="number" name="pergunta_4" value="1" id="pergunta_4" min="0" max="24"/>
                               </div>
                               <div class="form-input">
                                   <label for="pergunta_5" >Temperatura</label>
-                                  <input type="number" name="pergunta_5" value="0" id="pergunta_5" min="0" max="2000"/>
+                                  <input type="number" name="pergunta_5" value="25" id="pergunta_5" min="1" max="2000"/>
                               </div>
                             </div>
                             <div class="form-group">
@@ -148,11 +148,11 @@
                               </div>
                               <div class="form-input">
                                 <label for="pergunta_8" >Concentração da Solução do Anion (mol/L) </label>
-                                  <input type="number" name="pergunta_8" value="0" id="pergunta_8" min="0"  max="100000" />
+                                  <input type="number" name="pergunta_8" value="1" id="pergunta_8" min="0"  max="100000" />
                               </div>
                               <div class="form-input">
                                 <label for="pergunta_9" >Massa do Anion (kg)</label>
-                                  <input type="number" name="pergunta_9" value="0" id="pergunta_9" min="0" max="100000" />
+                                  <input type="number" name="pergunta_9" value="1" id="pergunta_9" min="0" max="100000" />
                               </div>
                             </div>
                           </div>
@@ -440,7 +440,7 @@
       var conc_catodo;
       var nome_catodo;
       var n_eletrons;
-      var Kgases = 287.0530;
+      var Kgases =   .0530;
       var Kfaraday = 96485.332;
 
       nome_catodo = document.getElementById("slct1").value;
@@ -460,7 +460,7 @@
           }
       }
 
-      alert("Ddp teórica ->"+nome_catodo + " com "+ nome_anodo+" = "+parseFloat(ddp_teorica));
+      // alert("Ddp teórica ->"+nome_catodo + " com "+ nome_anodo+" = "+parseFloat(ddp_teorica));
 
       if(anodo.n_eletrons > catodo.n_eletrons){
         n_eletrons = anodo.n_eletrons;
@@ -477,15 +477,15 @@
       temp= document.getElementById("pergunta_5").value;
 
 
-      alert(temp);
-      alert(conc_anodo);
-      alert(conc_catodo);
+      // alert(temp);
+      // alert(conc_anodo);
+      // alert(conc_catodo);
 
 
       //equação de nernst
       ddp_real = ddp_teorica - (Kgases*temp/(n_eletrons*Kfaraday))*Math.log(conc_anodo/conc_catodo);
 
-      alert("Ddp real ->"+parseFloat(ddp_real));
+      // alert("Ddp real ->"+parseFloat(ddp_real));
 
 
       var mols_anodo;
@@ -513,22 +513,24 @@
       var aux_ano;
 
       //definir substancia limitante
-      if(mols_anodo > mols_catodo){
-        aux_ano = mols_anodo * proporcao;
-        aux_cat = mols_catodo;
-      }else{
+      if(anodo.n_eletrons>=catodo.n_eletrons){
         aux_ano = mols_anodo;
-        aux_cat = mols_catodo * proporcao;
+        aux_cat = mols_catodo / proporcao;
+      }else{
+        aux_ano = mols_anodo / proporcao;
+        aux_cat = mols_catodo;
       }
 
+
+
       //quantidade de mols reagidos
-      if(aux_ano >aux_cat){
+      if(aux_ano > aux_cat){
         mols_eletron_reagidos = aux_cat * catodo.n_eletrons;
       }else{
         mols_eletron_reagidos = aux_ano * anodo.n_eletrons;
       }
 
-      alert(proporcao);
+      // alert(proporcao);
 
       var carga = mols_eletron_reagidos * Kfaraday;
 
@@ -539,11 +541,12 @@
       var densidade_energia = densidade_carga * ddp_real;
       var preco_total = (massa_anodo_input * anodo.preco) + (massa_catodo_input * catodo.preco);
 
-      alert("Capacidade :" + parseFloat(ampere_hora) +"Ah");
-      alert("Massa total: "+ massa_total + "Kg");
-      alert("Densidade de carga: "+ densidade_carga );
-      alert("Densidade de energia: "+ densidade_energia );
-      alert("Preço total: R$"+ preco_total );
+      alert("Tensão ->"+parseFloat(ddp_real)+"\n"+
+      "Capacidade :" + parseFloat(ampere_hora) +"Ah \n" +
+      "Massa total: "+ massa_total + "Kg \n" +
+      "Densidade de carga: "+ densidade_carga  + "\n" +
+      "Densidade de energia: "+ densidade_energia  + "\n" +
+      "Preço total: R$"+ preco_total)
     }
 
     function Sugerindo(){
