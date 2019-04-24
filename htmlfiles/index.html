@@ -41,6 +41,9 @@
         else if(s1.value == "Hg"){
           var optionArray = ["hidroxido_potassio|Hidróxido de Potássio (KOH)"];
         }
+        else if(s1.value == "I"){
+          var optionArray = ["iodato_sodio|Iodato de Sodio (NaIO3)"];
+        }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
     var newOption = document.createElement("option");
@@ -121,7 +124,7 @@
                             </div>
                             <div class="form-group">
                               <div class="form-input">
-                                <label for="pergunta_6" >Material do Anion</label>
+                                <label for="pergunta_6" >Material do Anado</label>
                                     <div class="styled-select slate">
                                       <select name="slct3" id="slct3" onchange="populate(this.id,'slct4')">
                                         <option value=""></option>
@@ -140,18 +143,18 @@
                                         <option value="I">Iodo</option>
                                       </select>
                                     </div>
-                                  <label for="pergunta_7" >Solução do Anion</label>
+                                  <label for="pergunta_7" >Solução do Anado</label>
                                     <div class="styled-select slate">
                                       <select id = "slct4" name="slct4">
                                       </select>
                                     </div>
                               </div>
                               <div class="form-input">
-                                <label for="pergunta_8" >Concentração da Solução do Anion (mol/L) </label>
+                                <label for="pergunta_8" >Concentração da Solução do Anado (mol/L) </label>
                                   <input type="number" name="pergunta_8" value="1" id="pergunta_8" min="0"  max="100000" />
                               </div>
                               <div class="form-input">
-                                <label for="pergunta_9" >Massa do Anion (kg)</label>
+                                <label for="pergunta_9" >Massa do Anado (kg)</label>
                                   <input type="number" name="pergunta_9" value="1" id="pergunta_9" min="0" max="100000" />
                               </div>
                             </div>
